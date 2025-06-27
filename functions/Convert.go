@@ -10,16 +10,16 @@ func Convert(s []string) []string {
 	for i := 0; i < len(s); i++ {
 		// word := strings.ToLower(s[i])
 
-		if i > 0 && (s[i] == "(up)" || s[i] == "(up)\n") {
+		if i > 0 && (s[i] == "(up)") {
 			s[i-1] = strings.ToUpper(s[i-1])
 			s[i] = ""
-		} else if i > 0 && (s[i] == "(low)" || s[i] == "(low)\n") {
+		} else if i > 0 && (s[i] == "(low)" ) {
 			s[i-1] = strings.ToLower(s[i-1])
 			s[i] = ""
-		} else if i > 0 && (s[i] == "(cap)" || s[i] == "(cap)\n") {
+		} else if i > 0 && (s[i] == "(cap)" ) {
 			s[i-1] = Capitalize(s[i-1])
 			s[i] = ""
-		} else if i > 0 && (s[i] == "(hex)" || s[i] == "(hex)\n") {
+		} else if i > 0 && (s[i] == "(hex)" ) {
 			decimal, err := strconv.ParseInt(s[i-1], 16, 64)
 			if err != nil {
 				fmt.Println("HEX Error:", err)
@@ -27,7 +27,7 @@ func Convert(s []string) []string {
 				s[i-1] = strconv.Itoa(int(decimal))
 			}
 			s[i] = ""
-		} else if i > 0 && (s[i] == "(bin)" || s[i] == "(bin)\n") {
+		} else if i > 0 && (s[i] == "(bin)" ) {
 			decimal, err := strconv.ParseInt(s[i-1], 2, 64)
 			if err != nil {
 				fmt.Println("HEX Error:", err)

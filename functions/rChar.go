@@ -13,5 +13,4 @@ func Rchar(clean []string) []string {
 		}
 	}
 	return result
-
 }

@@ -4,7 +4,6 @@ import (
 	"fmt"
 	goreloaded "goreloaded/functions"
 	"os"
-	"strings"
 )
 
 func main() {
@@ -15,11 +14,13 @@ func main() {
 	}
 	txt := string(content)
 	clean := goreloaded.Cleaned(txt)
-	// clean = goreloaded.Quote(clean)
 	clean = goreloaded.Convert(clean)
 	clean = goreloaded.Punc(clean)
 	clean = goreloaded.ConvN(clean)
 	clean = goreloaded.AtoAn(clean)
+	clean = goreloaded.Quote(clean)
+	// clean = goreloaded.Quote(clean)
 	clean = goreloaded.Rchar(clean)
-	fmt.Print(strings.Join(clean, " "))
+	// fmt.Print(strings.Join(clean, " "))
+	fmt.Print(clean)
 }
