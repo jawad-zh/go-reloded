@@ -1,34 +1,24 @@
 package goreloaded
 
-import (
-	"strings"
-)
-
-func Punc(s []string)[]string{
-
+func Punc(s []string) []string {
+	var result []string
 	for i := 0; i < len(s); i++ {
-	if Only(s[i]) && i > 0 {
-		if strings.HasSuffix(s[i-1], ")") {
-			for j := i - 2; j >= 0; j-- {
-				if s[j] != "" && !strings.HasPrefix(s[j], "(") && !strings.HasSuffix(s[j], ")") {
-					s[j] = s[j] + s[i]
-					s[i] = ""
-					break
-				}
+		if Only(s[i]) && i > 0 {
+			punctGroup := s[i]
+			j := i + 1
+			for j < len(s) && Only(s[j]) {
+				punctGroup += s[j]
+				s[j] = ""
+				j++
 			}
-		} else {
-			s[i-1] = s[i-1] + s[i]
+			s[i-1] += punctGroup
 			s[i] = ""
 		}
 	}
-}
-	var result []string
 	for _, word := range s {
 		if word != "" {
 			result = append(result, word)
 		}
 	}
-
-	 return result
+	return result
 }
-

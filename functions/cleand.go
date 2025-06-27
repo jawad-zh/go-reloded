@@ -4,10 +4,10 @@ func Cleaned(input string) []string {
 	var word string
 	var words []string
 	var punct string
-	for i := 0; i < len(input); i++ {
-		char := string(input[i])
-
-		if char != " " && char != "\n" {
+	runes := []rune(input)
+for i := 0; i < len(runes); i++ {
+    char := string(runes[i])
+		if char != " " && char != "\n" && char != "\r"{
 			if IsQ(char){
 				if word!= ""{
 					words = append(words, word)
@@ -42,7 +42,7 @@ func Cleaned(input string) []string {
 				words = append(words, punct)
 				punct = ""
 			}
-			if char == "\n" {
+			if char == "\n" || char == "\r" {
 				words = append(words, char)
 			}
 		}

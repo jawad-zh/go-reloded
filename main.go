@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
+	goreloaded "goreloaded/functions"
 	"os"
 	"strings"
-
-	goreloaded "goreloaded/functions"
 )
 
 func main() {
@@ -21,6 +20,6 @@ func main() {
 	clean = goreloaded.Punc(clean)
 	clean = goreloaded.ConvN(clean)
 	clean = goreloaded.AtoAn(clean)
+	clean = goreloaded.Rchar(clean)
 	fmt.Print(strings.Join(clean, " "))
-	// fmt.Print(clean)
 }
