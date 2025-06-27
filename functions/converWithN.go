@@ -15,7 +15,7 @@ func ConvN(s []string)[]string{
 				fmt.Println("Error:", err)
 				continue
 			}
-			for j := 1; j <= n; j++ {
+			for j := 0; j <= n; j++ {
 				if i-j >= 0 {
 					s[i-j] = strings.ToUpper(s[i-j])
 				}
@@ -29,7 +29,7 @@ func ConvN(s []string)[]string{
 				fmt.Println("Error:", err)
 				continue
 			}
-			for j := 1; j <= n; j++ {
+			for j := 0; j <= n; j++ {
 				if i-j >= 0 {
 					s[i-j] = strings.ToLower(s[i-j])
 				}
@@ -43,7 +43,7 @@ func ConvN(s []string)[]string{
 				fmt.Println("Error:", err)
 				continue
 			}
-			for j := 1; j <= n; j++ {
+			for j := 0; j <= n; j++ {
 				if i-j >= 0 {
 					s[i-j] = Capitalize(s[i-j])
 				}
@@ -57,7 +57,7 @@ func ConvN(s []string)[]string{
 				fmt.Println("Error:", err)
 				continue
 			}
-			for j := 1; j <= n; j++ {
+			for j := 0; j <= n; j++ {
 				if i-j >= 0 {
 					n,err := strconv.ParseInt(string(s[i-j]),16,64)
 					if err != nil {
@@ -76,7 +76,7 @@ func ConvN(s []string)[]string{
 				fmt.Println("Error:", err)
 				continue
 			}
-			for j := 1; j <= n; j++ {
+			for j := 0; j <= n; j++ {
 				if i-j >= 0 {
 					n,err := strconv.ParseInt(string(s[i-j]),2,64)
 					if err != nil {

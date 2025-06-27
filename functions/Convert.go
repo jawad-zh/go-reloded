@@ -13,11 +13,19 @@ func Convert(s []string) []string {
 		if i > 0 && (s[i] == "(up)") {
 			s[i-1] = strings.ToUpper(s[i-1])
 			s[i] = ""
+		} else if i == 0 && (s[i] == "(up)"){
+			s[i] = ""
 		} else if i > 0 && (s[i] == "(low)" ) {
 			s[i-1] = strings.ToLower(s[i-1])
 			s[i] = ""
+		}else if i == 0 && (s[i] == "(low)"){
+			s[i] = ""
 		} else if i > 0 && (s[i] == "(cap)" ) {
 			s[i-1] = Capitalize(s[i-1])
+			s[i] = ""
+		}else if i == 0 && (s[i] == "(cap)"){
+			s[i] = ""
+		}else if i == 0 && (s[i] == "(hex)"){
 			s[i] = ""
 		} else if i > 0 && (s[i] == "(hex)" ) {
 			decimal, err := strconv.ParseInt(s[i-1], 16, 64)
@@ -35,7 +43,7 @@ func Convert(s []string) []string {
 				s[i-1] = strconv.Itoa(int(decimal))
 			}
 			s[i] = ""
-		} else if strings.HasPrefix(s[i], "(") && strings.HasSuffix(s[i], ")") {
+		}else if i == 0 && (s[i] == "(bin)"){
 			s[i] = ""
 		}
 
