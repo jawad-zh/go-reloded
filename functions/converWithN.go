@@ -23,6 +23,8 @@ func ConvN(s []string)[]string{
 			}
 			s[i] = ""
 			s[i+1] = ""
+			s=Rmov(s)
+			i--
 		}else if s[i] == "(low," && i+1 < len(s) {
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
@@ -37,6 +39,8 @@ func ConvN(s []string)[]string{
 			}
 			s[i] = ""
 			s[i+1] = ""
+			s=Rmov(s)
+			i--
 		}else if s[i] == "(cap," && i+1 < len(s) {
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
@@ -51,6 +55,8 @@ func ConvN(s []string)[]string{
 			}
 			s[i] = ""
 			s[i+1] = ""
+			s=Rmov(s)
+			i--
 		}else if s[i] == "(hex," && i+1 < len(s) {
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
@@ -70,6 +76,8 @@ func ConvN(s []string)[]string{
 			}
 			s[i] = ""
 			s[i+1] = ""
+			s=Rmov(s)
+			i--
 		}else if s[i] == "(bin," && i+1 < len(s) {
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
@@ -89,6 +97,8 @@ func ConvN(s []string)[]string{
 			}
 			s[i] = ""
 			s[i+1] = ""
+			s=Rmov(s)
+			i--
 		}
 		}
 		
