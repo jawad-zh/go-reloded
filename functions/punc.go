@@ -11,8 +11,14 @@ func Punc(s []string) []string {
 				s[j] = ""
 				j++
 			}
-			s[i-1] += punctGroup
-			s[i] = ""
+			if !StringFlag(s[i-1]){
+
+				s[i-1] += punctGroup
+				s[i] = ""
+			}else{
+				s[i-2] += punctGroup
+				s[i] = ""
+			}
 		}
 	}
 	for _, word := range s {

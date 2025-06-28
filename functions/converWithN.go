@@ -8,11 +8,12 @@ import (
 
 func ConvN(s []string)[]string{
 	for i := 0; i < len(s); i++ {
-		if s[i] == "(up," && i+1 < len(s) {
+		if IsFlag(s){
+			if s[i] == "(up," && i+1 < len(s) {
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
 			if err != nil {
-				fmt.Println("Error:", err)
+				fmt.Println("Error Case:", err)
 				continue
 			}
 			for j := 0; j <= n; j++ {
@@ -26,7 +27,7 @@ func ConvN(s []string)[]string{
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
 			if err != nil {
-				fmt.Println("Error:", err)
+				fmt.Println("Error Case:", err)
 				continue
 			}
 			for j := 0; j <= n; j++ {
@@ -40,7 +41,7 @@ func ConvN(s []string)[]string{
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
 			if err != nil {
-				fmt.Println("Error:", err)
+				fmt.Println("Error Case:", err)
 				continue
 			}
 			for j := 0; j <= n; j++ {
@@ -54,14 +55,14 @@ func ConvN(s []string)[]string{
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
 			if err != nil {
-				fmt.Println("Error:", err)
+				fmt.Println("Error Case:", err)
 				continue
 			}
 			for j := 0; j <= n; j++ {
 				if i-j >= 0 {
 					n,err := strconv.ParseInt(string(s[i-j]),16,64)
 					if err != nil {
-						fmt.Println("Error:",err)
+						fmt.Println("Error Case:",err)
 					}else{
 						s[i-j] = strconv.Itoa(int(n))
 					}
@@ -73,14 +74,14 @@ func ConvN(s []string)[]string{
 			nStr := strings.TrimSuffix(s[i+1], ")")
 			n, err := strconv.Atoi(nStr)
 			if err != nil {
-				fmt.Println("Error:", err)
+				fmt.Println("Error Case:", err)
 				continue
 			}
 			for j := 0; j <= n; j++ {
 				if i-j >= 0 {
 					n,err := strconv.ParseInt(string(s[i-j]),2,64)
 					if err != nil {
-						fmt.Println("Error:",err)
+						fmt.Println("Error Case:",err)
 					}else{
 						s[i-j] = strconv.Itoa(int(n))
 					}
@@ -89,6 +90,8 @@ func ConvN(s []string)[]string{
 			s[i] = ""
 			s[i+1] = ""
 		}
+		}
+		
 	}
 	var result []string
 	for _, word := range s {

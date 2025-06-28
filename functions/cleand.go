@@ -20,7 +20,7 @@ for i := 0; i < len(runes); i++ {
 			// 		char  = ""
 			// 	}
 			// }
-			if Only(char) {
+			if Only(char) || IsQ(char){
 				if word != "" {
 					words = append(words, word)
 					word = ""

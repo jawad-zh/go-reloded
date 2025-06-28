@@ -30,7 +30,7 @@ func Convert(s []string) []string {
 		} else if i > 0 && (s[i] == "(hex)" ) {
 			decimal, err := strconv.ParseInt(s[i-1], 16, 64)
 			if err != nil {
-				fmt.Println("HEX Error:", err)
+				fmt.Println("Error Case:", err)
 			} else {
 				s[i-1] = strconv.Itoa(int(decimal))
 			}
@@ -38,7 +38,7 @@ func Convert(s []string) []string {
 		} else if i > 0 && (s[i] == "(bin)" ) {
 			decimal, err := strconv.ParseInt(s[i-1], 2, 64)
 			if err != nil {
-				fmt.Println("HEX Error:", err)
+				fmt.Println("Error Case:", err)
 			} else {
 				s[i-1] = strconv.Itoa(int(decimal))
 			}

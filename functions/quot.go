@@ -2,7 +2,11 @@ package goreloaded
 
 func Quote(s []string)[]string{
 for i:=0 ; i < len(s) ; i++{
-	if IsQ(s[i]) && i != len(s)-1{
+	if IsQ(s[i]) && ( i > 1 && IsQ(s[i-2]) ){
+		s[i] = s[i-1] + s[i] + s[i+1] 
+		s[i-1] = ""
+		s[i+1] =""
+	}else if IsQ(s[i]) && i != len(s)-1{
 		s[i] = s[i] + s[i+1]
 		s[i+1] = ""
 	}

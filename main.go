@@ -19,8 +19,11 @@ func main() {
 	clean = goreloaded.ConvN(clean)
 	clean = goreloaded.AtoAn(clean)
 	clean = goreloaded.Quote(clean)
-	// clean = goreloaded.Quote(clean)
 	clean = goreloaded.Rchar(clean)
 	// fmt.Print(strings.Join(clean, " "))
 	fmt.Print(clean)
+	// fmt.Print(goreloaded.IsFlag(clean))
+
+	// fmt.Print(clean)
+
 }
